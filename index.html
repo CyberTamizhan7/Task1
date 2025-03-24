@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Task 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bookify</h1>
+    <div id="sub_heading">
+        <p id="books">BOOKS</p>
+        <button type="button" id="b_add_to_cart" onclick="addToCart()">ADD TO CART</button>
+    </div>
+    <div class="container1">
+    <div id="d_book1">
+	<p id="book1_name">The Killer Dutch</p>
+	<p id="book1_price">Price : $100</p>
+	<img src="Assets/book1.jfif" alt="Book1 ">
+	<div id="d_book1_b">
+	    <button type="button" class="minus" onclick="minus('book1_quantity')">-</button>
+	    <p class="minus_plus" id="book1_quantity">0</p>
+	    <button type="button" class="plus" onclick="plus('book1_quantity')">+</button>
+        </div>
+    </div>
+    <div id="d_book2">
+	<p id="book2_name">My Great Predecessors</p>
+	<p id="book2_price">Price : $200</p>
+	<img src="Assets/book2.jfif" alt="Book2 ">
+	<div id="d_book2_b">
+	    <button type="button" class="minus" onclick="minus('book2_quantity')">-</button>
+	    <p class="minus_plus" id="book2_quantity">0</p>
+	    <button type="button" class="plus" onclick="plus('book2_quantity')">+</button>
+        </div>
+    </div>
+    <div id="d_book3">
+	<p id="book3_name">Silman's Endgame Course</p>
+	<p id="book3_price">Price : $300</p>
+	<img src="Assets/book3.jfif" alt="Book3 ">
+	<div id="d_book3_b">
+	    <button type="button" class="minus" onclick="minus('book3_quantity')">-</button>
+	    <p class="minus_plus" id="book3_quantity">0</p>
+	    <button type="button" class="plus" onclick="plus('book3_quantity')">+</button>
+        </div>
+    </div>
+    </div>
+    <table id="t_cart">
+	<caption>CART DETAILS</caption>
+	<thead>
+	    <tr>
+		<td>SNo</td>
+		<td>Book Name</td>
+		<td>Price</td>
+		<td>Quantity</td>
+	    </tr>
+	</thead>
+	<tbody>
+	    <tr>
+		<td>1</td>
+		<td>The Killer Dutch</td>
+		<td>$100</td>
+		<td id="td_book1">0</td>
+	    </tr>
+	    <tr>
+		<td>2</td>
+		<td>My Great Predecessors</td>
+		<td>$200</td>
+		<td id="td_book2">0</td>
+	    </tr>
+	    <tr>
+		<td>3</td>
+		<td>Silman's Complete Endgame Course</td>
+		<td>$300</td>
+		<td id="td_book3">0</td>
+	    </tr>
+	</tbody>
+    </table>
+    <div id="d_total">
+        <p id="total">Total : </p>
+        <p id="total_value">$0</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
