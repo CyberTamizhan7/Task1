@@ -1,3 +1,51 @@
+// Collecting Data from DB
+
+var http_request = new XMLHttpRequest();
+http_request.open("GET", "fetch_data.php", true);
+http_request.onreadystatechange = function(){
+	if(http_request.readyState==4 && http_request.status==200){
+		var data = JSON.parse(http_request.responseText);
+		displayData(data);
+	}	
+};
+http_request.send();
+
+// Displaying The Collected Data
+
+function displayData(data){
+
+	for(let i=0;i<data.length;i++){
+		document.getElementById("book"+(i+1)+"_name").innerText = data[i]['Book_Name'];
+		document.getElementById("book"+(i+1)+"_price").innerText = "Price : $" + data[i]['Price'];
+	}
+
+	var table = document.getElementById("table_body");
+
+	for(let i=0;i<data.length;i++){
+		var row = document.createElement("tr");
+		var cell1 = document.createElement("td");
+		cell1.textContent = i+1;
+		row.appendChild(cell1);
+
+		var cell2 = document.createElement("td");
+		cell2.textContent = data[i]['Book_Name'];
+		row.appendChild(cell2);
+
+		var cell3 = document.createElement("td");
+		cell3.textContent = data[i]['Price'];
+		row.appendChild(cell3);
+	
+		var cell4 = document.createElement("td");
+		cell4.id = "td_book"+(i+1);
+		cell4.textContent = 0;
+		row.appendChild(cell4);
+
+		table.appendChild(row);
+	}
+}
+
+
+
 function minus(id){
 	let value = parseInt(document.getElementById(id).innerText);
 	if(value>0){
